@@ -1,5 +1,9 @@
 # [React Mentions](https://react-mentions.now.sh)
 
+## It's a fork from [React Mentions](https://react-mentions.now.sh)
+
+##
+
 [![CircleCI][build-badge]][build]
 [![codecov][codecov-badge]][codecov]
 [![npm package][npm-badge]][npm]
