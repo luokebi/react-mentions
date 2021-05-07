@@ -34,10 +34,15 @@ export const makeTriggerRegex = function(trigger, options = {}) {
     // first capture group is the part to be replaced on completion
     // second capture group is for extracting the search query
     return new RegExp(
-      `(?:^|\\s)(${escapedTriggerChar}([^${
+      `(?:^|[^a-z|A-Z|0-9|-|&|%|$|!|\)|\\]|~|*|+|\\^])(${escapedTriggerChar}([^${
         allowSpaceInQuery ? '' : '\\s'
       }${escapedTriggerChar}]*))$`
     )
+    // return new RegExp(
+    //   `(?:^|[^a-z|A-Z|0-9|-|\&|\%|\$|\!|\)|\]|\~|\*|\+|\=])(${escapedTriggerChar}([^${
+    //     allowSpaceInQuery ? '' : '\\s'
+    //   }${escapedTriggerChar}]*))$`
+    // )
   }
 }
 
