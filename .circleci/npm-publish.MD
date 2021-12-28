@@ -1,0 +1,1 @@
+## 名字改回react-mentions 运行npm run build, 然后改回fork-react-mentions,再运行npm publish

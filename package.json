@@ -1,7 +1,7 @@
 {
   "name": "fork-react-mentions",
-  "version": "4.1.1-2",
-  "description": "React mentions input",
+  "version": "4.1.1-4",
+  "description": "A Fork of react mentions input",
   "main": "dist/react-mentions.cjs.js",
   "module": "dist/react-mentions.esm.js",
   "files": [
@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/signavio/react-mentions/issues"
   },
-  "homepage": "https://github.com/signavio/react-mentions",
+  "homepage": "https://github.com/luokebi/react-mentions",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
