@@ -2,7 +2,7 @@ import React from 'react'
 import useStyles from 'substyle'
 
 function createDefaultStyle(defaultStyle, getModifiers) {
-  const enhance = (ComponentToWrap) => {
+  const enhance = ComponentToWrap => {
     const DefaultStyleEnhancer = ({
       style,
       className,

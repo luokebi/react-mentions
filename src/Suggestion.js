@@ -102,7 +102,7 @@ const styled = defaultStyle(
   {
     cursor: 'pointer',
   },
-  (props) => ({ '&focused': props.focused })
+  props => ({ '&focused': props.focused })
 )
 
 export default styled(Suggestion)

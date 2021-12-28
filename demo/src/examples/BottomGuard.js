@@ -37,7 +37,7 @@ function BottomGuard({ value, data, onChange, onAdd }) {
           onChange={onChange}
           style={defaultStyle}
           placeholder={"Mention people using '@'"}
-          a11ySuggestionsListLabel={"Suggested mentions"}
+          a11ySuggestionsListLabel={'Suggested mentions'}
           suggestionsPortalHost={container}
           allowSuggestionsAboveCursor={true}
         >
@@ -57,7 +57,7 @@ function BottomGuard({ value, data, onChange, onAdd }) {
           onChange={onChange}
           style={defaultStyle}
           placeholder={"Mention people using '@'"}
-          a11ySuggestionsListLabel={"Suggested mentions"}
+          a11ySuggestionsListLabel={'Suggested mentions'}
           suggestionsPortalHost={container}
           allowSuggestionsAboveCursor={true}
         >

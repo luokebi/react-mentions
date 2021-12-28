@@ -13,7 +13,7 @@ import { merge } from '../../../src/utils'
 const style = merge({}, defaultStyle, {
   suggestions: {
     list: {
-      maxHeight: 100,
+      maxHeight: 200,
       overflow: 'auto',
       position: 'absolute',
       bottom: 14,
@@ -33,7 +33,7 @@ function Advanced({ value, data, onChange, onBlur, onAdd }) {
         onBlur={onBlur}
         style={style}
         inputRef={inputEl}
-        a11ySuggestionsListLabel={"Suggested mentions"}
+        a11ySuggestionsListLabel={'Suggested mentions'}
       >
         <Mention
           markup="{{__id__}}"

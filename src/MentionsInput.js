@@ -179,7 +179,7 @@ class MentionsInput extends React.Component {
     )
   }
 
-  setContainerElement = (el) => {
+  setContainerElement = el => {
     this.containerElement = el
   }
 
@@ -238,15 +238,15 @@ class MentionsInput extends React.Component {
     )
   }
 
-  renderInput = (props) => {
+  renderInput = props => {
     return <input type="text" ref={this.setInputRef} {...props} />
   }
 
-  renderTextarea = (props) => {
+  renderTextarea = props => {
     return <textarea ref={this.setInputRef} {...props} />
   }
 
-  setInputRef = (el) => {
+  setInputRef = el => {
     this.inputElement = el
     const { inputRef } = this.props
     if (typeof inputRef === 'function') {
@@ -256,7 +256,7 @@ class MentionsInput extends React.Component {
     }
   }
 
-  setSuggestionsElement = (el) => {
+  setSuggestionsElement = el => {
     this.suggestionsElement = el
   }
 
@@ -319,11 +319,11 @@ class MentionsInput extends React.Component {
     )
   }
 
-  setHighlighterElement = (el) => {
+  setHighlighterElement = el => {
     this.highlighterElement = el
   }
 
-  handleCaretPositionChange = (position) => {
+  handleCaretPositionChange = position => {
     this.setState({ caretPosition: position })
   }
 
@@ -473,7 +473,7 @@ class MentionsInput extends React.Component {
   }
 
   // Handle input element's change event
-  handleChange = (ev) => {
+  handleChange = ev => {
     isComposing = false
     // if we are inside iframe, we need to find activeElement within its contentDocument
     const currentDocument =
@@ -543,7 +543,7 @@ class MentionsInput extends React.Component {
   }
 
   // Handle input element's select event
-  handleSelect = (ev) => {
+  handleSelect = ev => {
     // keep track of selection range / caret position
     this.setState({
       selectionStart: ev.target.selectionStart,
@@ -567,7 +567,7 @@ class MentionsInput extends React.Component {
     this.props.onSelect(ev)
   }
 
-  handleKeyDown = (ev) => {
+  handleKeyDown = ev => {
     // do not intercept key events if the suggestions overlay is not shown
     const suggestionsCount = countSuggestions(this.state.suggestions)
 
@@ -609,9 +609,8 @@ class MentionsInput extends React.Component {
     }
   }
 
-  shiftFocus = (delta) => {
+  shiftFocus = delta => {
     const suggestionsCount = countSuggestions(this.state.suggestions)
-
     this.setState({
       focusIndex:
         (suggestionsCount + this.state.focusIndex + delta) % suggestionsCount,
@@ -625,7 +624,7 @@ class MentionsInput extends React.Component {
     const { result, queryInfo } = Object.values(suggestions).reduce(
       (acc, { results, queryInfo }) => [
         ...acc,
-        ...results.map((result) => ({ result, queryInfo })),
+        ...results.map(result => ({ result, queryInfo })),
       ],
       []
     )[focusIndex]
@@ -637,7 +636,7 @@ class MentionsInput extends React.Component {
     })
   }
 
-  handleBlur = (ev) => {
+  handleBlur = ev => {
     const clickedSuggestion = this._suggestionsMouseDown
     this._suggestionsMouseDown = false
 
@@ -657,11 +656,11 @@ class MentionsInput extends React.Component {
     this.props.onBlur(ev, clickedSuggestion)
   }
 
-  handleSuggestionsMouseDown = (ev) => {
+  handleSuggestionsMouseDown = ev => {
     this._suggestionsMouseDown = true
   }
 
-  handleSuggestionsMouseEnter = (focusIndex) => {
+  handleSuggestionsMouseEnter = focusIndex => {
     this.setState({
       focusIndex,
       scrollFocusedIntoView: false,

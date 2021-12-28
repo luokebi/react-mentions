@@ -199,7 +199,7 @@ class Highlighter extends Component {
     )
   }
 
-  setCaretElement = (el) => {
+  setCaretElement = el => {
     this.caretElement = el
   }
 }
@@ -225,7 +225,7 @@ const styled = defaultStyle(
       visibility: 'hidden',
     },
   },
-  (props) => ({
+  props => ({
     '&singleLine': props.singleLine,
   })
 )

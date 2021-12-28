@@ -50,19 +50,33 @@ class SuggestionsOverlay extends Component {
     ) {
       return
     }
+    this.ulElement.style.pointerEvents = 'none'
+    this.ulElement.children[this.props.focusIndex].scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    })
+    return
 
-    const scrollTop = this.ulElement.scrollTop
-    let { top, bottom } = this.ulElement.children[
-      this.props.focusIndex
-    ].getBoundingClientRect()
-    const { top: topContainer } = this.ulElement.getBoundingClientRect()
-    top = top - topContainer + scrollTop
-    bottom = bottom - topContainer + scrollTop
+    // const scrollTop = this.ulElement.scrollTop
+    // let { top, bottom } = this.ulElement.children[
+    //   this.props.focusIndex
+    // ].getBoundingClientRect()
+    // console.log(top, bottom, scrollTop, this.ulElement.offsetHeight)
+    // const { top: topContainer } = this.ulElement.getBoundingClientRect()
+    // top = top - topContainer + scrollTop
+    // bottom = bottom - topContainer + scrollTop
 
-    if (top < scrollTop) {
-      this.ulElement.scrollTop = top
-    } else if (bottom > this.ulElement.offsetHeight) {
-      this.ulElement.scrollTop = bottom - this.ulElement.offsetHeight
+    // if (top < scrollTop) {
+    //   this.ulElement.scrollTop = top
+    // } else if (bottom > this.ulElement.offsetHeight) {
+    //   this.ulElement.scrollTop = bottom - this.ulElement.offsetHeight
+    // }
+  }
+
+  enableMouse = () => {
+    if (this.ulElement && this.ulElement.style.pointerEvents === 'none') {
+      this.ulElement.style.pointerEvents = 'auto'
     }
   }
 
@@ -89,6 +103,8 @@ class SuggestionsOverlay extends Component {
         {...inline({ position: position || 'absolute', left, top }, style)}
         onMouseDown={onMouseDown}
         ref={containerRef}
+        onMouseEnter={this.enableMouse}
+        onMouseMove={this.enableMouse}
       >
         <ul
           ref={this.setUlElement}
@@ -160,12 +176,12 @@ class SuggestionsOverlay extends Component {
     this.props.onSelect(suggestion, queryInfo)
   }
 
-  setUlElement = (el) => {
+  setUlElement = el => {
     this.ulElement = el
   }
 }
 
-const getID = (suggestion) => {
+const getID = suggestion => {
   if (typeof suggestion === 'string') {
     return suggestion
   }
